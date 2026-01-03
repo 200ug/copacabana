@@ -66,7 +66,7 @@ void kad_uint256_random(kad_uint256_t *r) {
 }
 
 void kad_uint256_print(const kad_uint256_t *a, const char *label) {
-    printf("%s: ", label);
+    printf("%s ", label);
 
     for (int i = 0; i < 8; i++) {
         printf("%08x", a->w[i]);
