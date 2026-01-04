@@ -7,7 +7,7 @@
 // id type, xor, comparison
 
 typedef struct {
-    uint32_t w[8]; // 256 / 32
+    uint32_t w[8]; // 256 / 32 (160-bit id + alignment padding)
 } kad_uint256_t;
 
 int kad_uint256_cmp(const kad_uint256_t *a, const kad_uint256_t *b);
@@ -17,6 +17,5 @@ void kad_uint256_xor(kad_uint256_t *r, const kad_uint256_t *a, const kad_uint256
 void kad_uint256_from_bytes(kad_uint256_t *r, const uint8_t bytes[32]);
 void kad_uint256_from_key(kad_uint256_t *r, const uint8_t *key, const size_t len);
 void kad_uint256_random(kad_uint256_t *r);
-void kad_uint256_print(const kad_uint256_t *a, const char *label);
 
 #endif
